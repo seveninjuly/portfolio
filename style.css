@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Nunito+Sans&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.hidden {
+	display: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+}
+
+header {
+	width: 100%;
+	height: 35px;
+	background: none;
+	top: 0;
+	z-index: 1;
+	padding: 0 5vw;
+	font-family: 'Nunito Sans', sans-serif;
+	position: fixed;
+}
+
+h1 {
+	line-height: 35px;
+	float: left;
+	margin: 0;
+	padding-left: 5vw;
+}
+
+#logo {
+	font-size: 20px;
+	letter-spacing: 2px;
+	text-align: center;
+	vertical-align: middle;
+	color: #4d241f;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	padding-right: 5vw;
+}
+
+.menu-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	float: right;
+	line-height: 35px;
+	width: 20%;
+	padding-right: 5vw;
+}
+
+.menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+	font-size: 13px;
+}
+
+.menu a {
+	margin-left: 20px;
+	padding: 0 10px;
+	text-decoration: none;
+	transition: 0.5s;
+	color:rgb(83,45,42);
+}
+
+.menu a:hover {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+li {
+	font-size: 13px;
+}
+
+.show-menu, .hide-menu {
+	font-size: 30px;
+	cursor: pointer;
+	transition: 0.3s;
+	display: none;
+	color: rgb(83,45,42);
+}
+
+.show-menu {
+	float: right;
+}
+
+.show-menu i {
+	line-height: 50px;
+}
+
+#toggle {
+	position: absolute;
+	z-index: -1111;
+	visibility: hidden;
+	
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+
+#start-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	padding: 5vw 10vw;
+	background: rgb(83, 45, 42); 
+}
+
+.headline {
+	display: block;
+	text-align: center;
+	margin-top: 150px;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 2;
+	font-family: 'Inconsolata', monospace;
+	color:rgb(252, 194, 69);
+}
+
+.view-project {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 150px;
+}
+
+#view-project-button {
+	width: auto;
+	height: 40px;
+	padding: 10px;
+	border: 1px solid rgb(83,45,42);
+	border-radius: 30px;
+	background-color: rgb(252, 196, 77);
+	color: rgb(83,45,42);
+	vertical-align: center;
+	line-height: 0;
+	font-size: 13px;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+#view-project-button:hover {
+	background-color: rgb(255, 212, 112);
+	color: rgb(83,45,42);
+}
+
+#arrow-down {
+	border: none;
+	background: none;
+	cursor: pointer;
+	background: none;
+	font-size: 10px;
+}
+
+#arrow-down i {
+	color: rgb(252, 194, 69);
+}
+
+#arrow-down:hover {
+	font-size: 14px;
+	color: rgb(236, 167, 16);
+	transition: 0.3s;
+}
+
+#project-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	padding: 30vw 10vw;
+	font-family: 'Nunito Sans', sans-serif;
+	line-height: 1.5;
+	background: #fcd373; 
+	color: #0a0302;
+}
+
+
+#project-container img {
+	display: block;
+	align-self: center;
+	width: 60%;
+	height: auto;
+	border: double rgb(133, 68, 74);
+}
+
+.app-name {
+	display: block;
+	text-align: center;
+	font-size: 18px;
+	margin-top: 20px;	
+}
+
+.app-description {
+	margin-top: 10px;
+	font-size: 16px;
+	padding-left: 10vw;
+	padding-right: 10vw;
+}
+
+.tech-icon {
+	display: flex;
+	justify-content: flex-start;
+	align-self: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.tech-icon .fab {
+	margin-right: 10px;
+	color: #222961;
+}
+
+.link-to-repo {
+	align-self: center;
+}
+
+.link-to-repo a {
+	font-size: 16px;
+	color: #421e1b;
+}
+
+.link-to-repo a:hover{
+	color: #222961;
+	font-size: 17px;
+	transition: 0.2s;
+}
+
+.app-github {
+	margin-right: 5px;
+}
+
+.app-live {
+	margin-left: 5px;
+}
+
+#contact-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: baseline;
+	padding-top: 10vw;
+	padding-bottom: 10vw;
+	padding-left: 11vw;
+	padding-right: 10vw;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	line-height: 1.5;
+	background: rgb(240, 224, 196);
+	color: #22100d;
+}
+
+.seperate {
+	margin-top: 10px;
+}
+
+.email-headline {
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+#email {
+	margin-left: 5px;
+	color: rgb(34, 51, 150)
+}
+
+.contact-icon {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-top: 10px;
+}
+.contact-icon i {
+	margin-right: 15px;
+	font-size: 20px;
+	line-height: 0;
+	color: rgb(107, 20, 8);
+}
+
+#to-top-button {
+	position: fixed;
+	padding: 5px;
+	background: none;
+	align-self: flex-end;
+	right: 0;
+	bottom: 0;
+	margin-bottom: 10px;
+	font-size: 20px;
+	border: none;
+	cursor: pointer;
+}
+
+#to-top-button i {
+	color: #4b231e;
+}
+
+footer {
+	display: block;
+	align-self: center;
+	margin-top: -5vh;
+	font-size: 12px;
+}
+
+@media screen and (max-width: 1024px) {
+	#start-container {
+		justify-content: space-evenly;
+	}
+	
+	.headline {
+		margin-top: 20px;
+	}
+	
+	.view-project {
+		margin-top: 0;
+	}
+
+	#project-container {
+		justify-content: flex-start;
+		margin-top: 0;
+		padding-top: 20vw;
+	}
+
+	#contact-container {
+		justify-content: flex-start;
+		line-height: 2;
+	}
+
+	.seperate {
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	h1 {
+		display: none;
+	}
+
+	header {
+		background: none;
+	}
+
+	#toggle {
+		font-size: 4vw;
+		float: right;
+	}
+
+	.show-menu, .hide-menu {
+		display: block;
+	}
+
+	.menu-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		position: fixed;
+		width: 30%;
+		height: 100%;
+		background: #FCC245;
+		right: -100%;
+		top: 0;
+		text-align: center;
+		padding: 80px 0;
+		line-height: normal;
+		transition: 0.5s;
+	}
+
+	.menu {
+		flex-direction: column;
+	}
+
+	.menu a {
+		display: block;
+		padding: 20px;
+		margin-left: 0;
+		color: #4d241f;
+	}
+
+	li {
+		font-size: 12px;
+	}
+	
+	li a:hover {
+		font-size: 13px;
+	}
+
+	.show-menu, .hide-menu {
+		font-size: 20px;
+		cursor: pointer;
+		transition: 0.3s;
+	}
+
+	.hide-menu {
+		position: absolute;
+		top: 35px;
+		right: 5vw;
+	}
+
+	#toggle:checked + .menu-container {
+		right: 0;
+	}
+
+	.headline {
+		font-size: 20px;
+	}
+
+	.view-project {
+		margin-top: 0;
+	}
+
+	#project-container {
+		justify-content: center;
+	}
+
+	.app-name {
+		font-size: 15px;
+		margin-top: 15px;	
+	}
+	
+	.app-description {
+		font-size: 15px;
+	}
+
+	.link-to-repo a {
+		font-size: 15px;
+	}
+
+	.link-to-repo a:hover {
+		font-size: 16px;
+	}
+	
+	#contact-container {
+		padding-top: 8vh;
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	.seperate {
+		margin-top: 10px;
+	}
+
+	.email-headline {
+		margin-top: 18px;
+	}
+
+	.contact-icon i {
+		margin-right: 10px;
+		font-size: 18px;
+	}
+
+	footer {
+		font-size: 10px;
+		margin-top: -3vh;
+		font-size: 10px;
+	}
+
+	#to-top-button {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.headline {
+		font-size: 18px;
+	}
+
+	.view-project {
+		margin-top: 0;
+	}
+
+	#project-container {
+		justify-content: center;
+		margin-top: 0;
+	}
+
+	.app-name {
+		font-size: 15px;
+		margin-top: 10px;	
+	}
+	
+	.app-description {
+		font-size: 13px;
+		margin-top: 0;
+	}
+
+	.link-to-repo a {
+		font-size: 13px;
+	}
+
+	.menu a:hover, .link-to-repo a:hover {
+		font-size: 14px;
+	}
+	
+	#contact-container {
+		padding-top: 6vh;
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	.seperate {
+		margin-top: 10px;
+	}
+
+	.email-headline {
+		margin-top: 14px;
+	}
+
+	.contact-icon i {
+		margin-right: 10px;
+		font-size: 14px;
+	}
+
+	#to-top-button {
+		font-size: 16px;
+	}
+}
