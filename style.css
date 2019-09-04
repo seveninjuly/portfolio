@@ -15,16 +15,11 @@ a {
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-	width: 100%;
-	height: 100vh;
+	background: rgb(240, 224, 196);
 }
 
 header {
-	width: 100%;
+	width: 100vw;
 	height: 35px;
 	background: none;
 	top: 0;
@@ -63,7 +58,7 @@ nav {
 	float: right;
 	line-height: 35px;
 	width: 20%;
-	padding-right: 5vw;
+	
 }
 
 .menu {
@@ -122,28 +117,22 @@ main {
 	align-items: center;
 }
 
-section {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	height: 100vh;
-}
-
 #start-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	align-items: center;
-	padding: 5vw 10vw;
+	padding-left:10vw;
+	padding-right: 10vw;
 	background: rgb(83, 45, 42); 
+	width: 100vw;
+	min-height: 100vh;
 }
 
 .headline {
 	display: block;
 	text-align: center;
-	margin-top: 150px;
+	margin-top: 50px;
 	font-size: 30px;
 	font-weight: bold;
 	line-height: 2;
@@ -156,7 +145,7 @@ section {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	margin-top: 150px;
+	
 }
 
 #view-project-button {
@@ -170,7 +159,7 @@ section {
 	vertical-align: center;
 	line-height: 0;
 	font-size: 13px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	cursor: pointer;
 }
 
@@ -200,12 +189,17 @@ section {
 #project-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
-	padding: 30vw 10vw;
+	justify-content: center;
+	padding-top: 5vh;
+	padding-bottom: 5vh;
+	padding-left: 10vw;
+	padding-right: 10vw;
 	font-family: 'Nunito Sans', sans-serif;
 	line-height: 1.5;
 	background: #fcd373; 
 	color: #0a0302;
+	width: 100vw;
+	min-height: 100vh;
 }
 
 
@@ -227,8 +221,8 @@ section {
 .app-description {
 	margin-top: 10px;
 	font-size: 16px;
-	padding-left: 10vw;
-	padding-right: 10vw;
+	padding-left: 15vw;
+	padding-right: 15vw;
 }
 
 .tech-icon {
@@ -240,8 +234,9 @@ section {
 }
 
 .tech-icon .fab {
-	margin-right: 10px;
-	color: #222961;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: #0643a0;
 }
 
 .link-to-repo {
@@ -254,7 +249,7 @@ section {
 }
 
 .link-to-repo a:hover{
-	color: #222961;
+	color: #0643a0;
 	font-size: 17px;
 	transition: 0.2s;
 }
@@ -270,18 +265,20 @@ section {
 #contact-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: baseline;
-	padding-top: 10vw;
-	padding-bottom: 10vw;
-	padding-left: 11vw;
-	padding-right: 10vw;
+	padding-top: 5vh;
+	padding-bottom: 5vh;
+	padding-left: 16vw;
+	padding-right: 15vw;
 	font-family: 'Nunito Sans', sans-serif;
 	font-size: 18px;
 	font-style: normal;
 	line-height: 1.5;
 	background: rgb(240, 224, 196);
 	color: #22100d;
+	width: 100vw;
+	min-height: 100vh;
 }
 
 .seperate {
@@ -330,9 +327,11 @@ section {
 
 footer {
 	display: block;
-	align-self: center;
-	margin-top: -5vh;
+	width: 100vw;
+	text-align: center;
+	margin-top: -1vh;
 	font-size: 12px;
+	background: rgb(240, 224, 196);
 }
 
 @media screen and (max-width: 1024px) {
@@ -483,8 +482,6 @@ footer {
 
 	footer {
 		font-size: 10px;
-		margin-top: -3vh;
-		font-size: 10px;
 	}
 
 	#to-top-button {
@@ -520,8 +517,12 @@ footer {
 		font-size: 13px;
 	}
 
+	.menu a {
+		font-size: 5vw;
+	}
+
 	.menu a:hover, .link-to-repo a:hover {
-		font-size: 14px;
+		font-size: 6vw;
 	}
 	
 	#contact-container {
