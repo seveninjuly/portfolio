@@ -20,7 +20,7 @@ body {
 
 header {
 	width: 100vw;
-	height: 35px;
+    height: 35px;
 	background: none;
 	top: 0;
 	z-index: 1;
@@ -30,40 +30,39 @@ header {
 }
 
 h1 {
-	line-height: 35px;
-	float: left;
+	visibility: hidden;
 	margin: 0;
-	padding-left: 5vw;
+	height: 0;
 }
 
-#logo {
-	font-size: 20px;
-	letter-spacing: 2px;
-	text-align: center;
-	vertical-align: middle;
-	color: #4d241f;
-}
-
-nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	padding-right: 5vw;
+.show-menu, .hide-menu {
+	display: block;
+	font-size: 30px;
+	cursor: pointer;
+	transition: 0.3s;
+	color: rgb(83,45,42);
 }
 
 .menu-container {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	position: fixed;
 	float: right;
+	width: 30%;
+	height: 100%;
 	line-height: 35px;
-	width: 20%;
-	
+	background: #FCC245;
+	right: -100%;
+	top: 0;
+	text-align: center;
+	padding: 80px 0;
+	transition: 0.5s;
 }
 
 .menu {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
 	list-style: none;
@@ -71,43 +70,55 @@ nav {
 }
 
 .menu a {
-	margin-left: 20px;
-	padding: 0 10px;
-	text-decoration: none;
+	display: block;
+	padding: 20px;
+	margin-left: 0;
+	color: #4d241f;
 	transition: 0.5s;
-	color:rgb(83,45,42);
 }
 
 .menu a:hover {
-	font-size: 15px;
+	font-size: 13px;
 	font-weight: bold;
 }
 
 li {
-	font-size: 13px;
+	font-size: 12px;
 }
 
 .show-menu, .hide-menu {
-	font-size: 30px;
+	font-size: 20px;
 	cursor: pointer;
 	transition: 0.3s;
-	display: none;
 	color: rgb(83,45,42);
 }
 
 .show-menu {
 	float: right;
+	margin-top: 5px;
+	margin-right: 5px;
 }
 
 .show-menu i {
 	line-height: 50px;
 }
 
+.hide-menu {
+	position: absolute;
+	top: 35px;
+	right: 5vw;
+}
+
 #toggle {
+	font-size: 4vw;
+	float: right;
 	position: absolute;
 	z-index: -1111;
 	visibility: hidden;
-	
+}
+
+#toggle:checked + .menu-container {
+	right: 0;
 }
 
 main {
@@ -131,13 +142,13 @@ main {
 
 .headline {
 	display: block;
-	text-align: center;
-	margin-top: 50px;
-	font-size: 30px;
+    text-align: center;
+    margin-top: 50px;
+	font-size: 20px;
 	font-weight: bold;
-	line-height: 2;
-	font-family: 'Inconsolata', monospace;
-	color:rgb(252, 194, 69);
+    line-height: 2;
+    font-family: 'Inconsolata', monospace;
+    color:rgb(252, 194, 69);
 }
 
 .view-project {
@@ -145,7 +156,7 @@ main {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-	
+	margin-top: 0;
 }
 
 #view-project-button {
@@ -175,11 +186,11 @@ main {
 	background: none;
 	font-size: 10px;
 }
-
+  
 #arrow-down i {
 	color: rgb(252, 194, 69);
 }
-
+  
 #arrow-down:hover {
 	font-size: 14px;
 	color: rgb(236, 167, 16);
@@ -188,20 +199,19 @@ main {
 
 #project-container {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	padding-top: 5vh;
-	padding-bottom: 5vh;
-	padding-left: 10vw;
-	padding-right: 10vw;
-	font-family: 'Nunito Sans', sans-serif;
-	line-height: 1.5;
-	background: #fcd373; 
-	color: #0a0302;
-	width: 100vw;
-	min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.5;
+    background: #fcd373; 
+    color: #0a0302;
+    width: 100vw;
+    min-height: 100vh;
 }
-
 
 #project-container img {
 	display: block;
@@ -213,16 +223,16 @@ main {
 
 .app-name {
 	display: block;
-	text-align: center;
-	font-size: 18px;
-	margin-top: 20px;	
+    text-align: center;
+	font-size: 15px;
+	margin-top: 15px;	
 }
 
 .app-description {
 	margin-top: 10px;
-	font-size: 16px;
+	font-size: 15px;
 	padding-left: 15vw;
-	padding-right: 15vw;
+    padding-right: 15vw;
 }
 
 .tech-icon {
@@ -232,7 +242,7 @@ main {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
-
+  
 .tech-icon .fab {
 	margin-left: 5px;
 	margin-right: 5px;
@@ -244,41 +254,41 @@ main {
 }
 
 .link-to-repo a {
-	font-size: 16px;
+	font-size: 15px;
 	color: #421e1b;
 }
 
-.link-to-repo a:hover{
+.link-to-repo a:hover {
 	color: #0643a0;
-	font-size: 17px;
+	font-size: 16px;
 	transition: 0.2s;
 }
 
 .app-github {
 	margin-right: 5px;
 }
-
+  
 .app-live {
 	margin-left: 5px;
 }
 
 #contact-container {
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: baseline;
-	padding-top: 5vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+	padding-top: 8vh;
 	padding-bottom: 5vh;
-	padding-left: 16vw;
-	padding-right: 15vw;
-	font-family: 'Nunito Sans', sans-serif;
-	font-size: 18px;
+    padding-left: 11vw;
+    padding-right: 10vw;
+    font-family: 'Nunito Sans', sans-serif;
+	font-size: 16px;
 	font-style: normal;
 	line-height: 1.5;
 	background: rgb(240, 224, 196);
-	color: #22100d;
-	width: 100vw;
-	min-height: 100vh;
+    color: #22100d;
+    width: 100vw;
+    min-height: 100vh;
 }
 
 .seperate {
@@ -287,7 +297,7 @@ main {
 
 .email-headline {
 	font-weight: bold;
-	margin-top: 20px;
+	margin-top: 18px;
 }
 
 #email {
@@ -301,11 +311,12 @@ main {
 	justify-content: space-around;
 	margin-top: 10px;
 }
+
 .contact-icon i {
-	margin-right: 15px;
-	font-size: 20px;
+	margin-right: 10px;
+	font-size: 18px;
 	line-height: 0;
-	color: rgb(107, 20, 8);
+    color: rgb(107, 20, 8);
 }
 
 #to-top-button {
@@ -316,7 +327,7 @@ main {
 	right: 0;
 	bottom: 0;
 	margin-bottom: 10px;
-	font-size: 20px;
+	font-size: 18px;
 	border: none;
 	cursor: pointer;
 }
@@ -330,221 +341,134 @@ footer {
 	width: 100vw;
 	text-align: center;
 	margin-top: -1vh;
-	font-size: 12px;
+	font-size: 10px;
 	background: rgb(240, 224, 196);
 }
 
-@media screen and (max-width: 1024px) {
-	#start-container {
-		justify-content: space-evenly;
-	}
-	
-	.headline {
-		margin-top: 20px;
-	}
-	
-	.view-project {
-		margin-top: 0;
-	}
-
-	#project-container {
-		justify-content: flex-start;
-		margin-top: 0;
-		padding-top: 20vw;
-	}
-
-	#contact-container {
-		justify-content: flex-start;
-		line-height: 2;
-	}
-
-	.seperate {
-		margin-top: 20px;
-	}
-}
-
-@media screen and (max-width: 700px) {
-	h1 {
-		display: none;
-	}
-
+@media screen and (min-width: 800px) {  
 	header {
-		background: none;
-	}
-
-	#toggle {
-		font-size: 4vw;
-		float: right;
-	}
-
-	.show-menu, .hide-menu {
-		display: block;
-	}
-
-	.menu-container {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
 		position: fixed;
-		width: 30%;
-		height: 100%;
-		background: #FCC245;
-		right: -100%;
-		top: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	h1 {
+		visibility: visible;
+		height: 35px;
+		float: left;
+		margin: 0;
+	}
+
+	#logo {
+		font-size: 20px;
+		letter-spacing: 2px;
+		line-height: 35px;
+		vertical-align: center;
 		text-align: center;
-		padding: 80px 0;
-		line-height: normal;
-		transition: 0.5s;
-	}
-
-	.menu {
-		flex-direction: column;
-	}
-
-	.menu a {
-		display: block;
-		padding: 20px;
-		margin-left: 0;
 		color: #4d241f;
 	}
 
-	li {
-		font-size: 12px;
-	}
-	
-	li a:hover {
-		font-size: 13px;
-	}
-
-	.show-menu, .hide-menu {
-		font-size: 20px;
-		cursor: pointer;
-		transition: 0.3s;
+	nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+		width: 25%;
 	}
 
-	.hide-menu {
-		position: absolute;
-		top: 35px;
-		right: 5vw;
+	#toggle, .show-menu, .hide-menu {
+		visibility: hidden;
 	}
 
-	#toggle:checked + .menu-container {
+	.menu-container {
+		width: 20%;
+		height: 35px;
 		right: 0;
+		background: none;
+		padding: 0;
 	}
 
-	.headline {
-		font-size: 20px;
-	}
-
-	.view-project {
-		margin-top: 0;
-	}
-
-	#project-container {
-		justify-content: center;
-	}
-
-	.app-name {
-		font-size: 15px;
-		margin-top: 15px;	
-	}
-	
-	.app-description {
-		font-size: 15px;
-	}
-
-	.link-to-repo a {
-		font-size: 15px;
-	}
-
-	.link-to-repo a:hover {
-		font-size: 16px;
-	}
-	
-	#contact-container {
-		padding-top: 8vh;
-		font-size: 16px;
-		line-height: 1.5;
-	}
-
-	.seperate {
-		margin-top: 10px;
-	}
-
-	.email-headline {
-		margin-top: 18px;
-	}
-
-	.contact-icon i {
-		margin-right: 10px;
-		font-size: 18px;
-	}
-
-	footer {
-		font-size: 10px;
-	}
-
-	#to-top-button {
-		font-size: 18px;
-	}
-}
-
-@media screen and (max-width: 320px) {
-	.headline {
-		font-size: 18px;
-	}
-
-	.view-project {
-		margin-top: 0;
-	}
-
-	#project-container {
-		justify-content: center;
-		margin-top: 0;
-	}
-
-	.app-name {
-		font-size: 15px;
-		margin-top: 10px;	
-	}
-	
-	.app-description {
-		font-size: 13px;
-		margin-top: 0;
-	}
-
-	.link-to-repo a {
-		font-size: 13px;
+	.menu {
+		flex-direction: row;
+		justify-content: space-around;
+		padding-right: 20vw;
 	}
 
 	.menu a {
-		font-size: 5vw;
+		margin-left: 20px;
+		padding: 0 10px;
+		letter-spacing: 1.5;
+		color:rgb(83,45,42);
 	}
 
-	.menu a:hover, .link-to-repo a:hover {
-		font-size: 6vw;
+	.menu a:hover {
+		font-size: 15px;
+	}
+	  
+	li {
+		font-size: 13px;
+	}
+	  
+	.show-menu, .hide-menu {
+		font-size: 30px;
+		display: none;
 	}
 	
-	#contact-container {
-		padding-top: 6vh;
-		font-size: 14px;
-		line-height: 1.5;
+	.headline {
+		font-size: 30px;
 	}
-
-	.seperate {
-		margin-top: 10px;
+	  
+	#project-container {
+		padding-top: 5vw;
+		padding-left: 10vw;
+		padding-right: 10vw;
 	}
-
-	.email-headline {
-		margin-top: 14px;
+	 
+	.app-name {
+		font-size: 18px;
+		margin-top: 20px; 
 	}
-
-	.contact-icon i {
-		margin-right: 10px;
-		font-size: 14px;
-	}
-
-	#to-top-button {
+	  
+	.app-description {
 		font-size: 16px;
 	}
-}
+	  
+	.link-to-repo a {
+		font-size: 16px;
+	}
+	  
+	.link-to-repo a:hover{
+		font-size: 17px;
+	}
+	  
+	#contact-container {
+		padding-top: 5vh;
+		padding-left: 16vw;
+		padding-right: 15vw;
+		font-size: 18px;
+	}
+	  
+	.email-headline {
+		margin-top: 20px;
+	}
+	  
+	.contact-icon {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		margin-top: 10px;
+	}
+	  
+	.contact-icon i {
+		margin-right: 15px;
+		font-size: 20px;
+	}
+	  
+	#to-top-button {
+		font-size: 20px;
+	}
+	  
+	footer {
+		font-size: 12px;
+	}
+} 
