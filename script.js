@@ -19,18 +19,10 @@ function smoothScroll() {
     });
     $(window).scroll(function () {
         const scroll = $(window).scrollTop();
-        if (window.innerWidth > 600) {
-            if (scroll > 200) {
+        if (window.innerWidth > 810 && scroll > 200) {
                 $('#to-top-button').show();
-                $('#logo, .menu a, .show-menu').css('color', '#4d241f');
-            }
-            else {
-                $('#to-top-button').hide();
-                $('#logo, .menu a, .show-menu').css('color', '#ffc847');
-            }
         }
-
-        if (window.innerWidth <= 600) {
+        else if (window.innerWidth <= 810) {
             if (scroll > 200) {
                 $('#to-top-button').show();
                 $('.menu a, .show-menu').css('color', '#4d241f');
@@ -39,6 +31,9 @@ function smoothScroll() {
                 $('#to-top-button').hide();
                 $('.show-menu').css('color', '#ffc847');
             }
+        }
+        else {
+            $('#to-top-button').hide();
         }
     })
 }
