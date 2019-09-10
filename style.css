@@ -345,19 +345,23 @@ footer {
 	background: rgb(240, 224, 196);
 }
 
-@media screen and (min-width: 800px) {  
+@media screen and (min-width: 810px) {  
 	header {
 		position: fixed;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
+		padding-left: 2vw;
+		background: rgba(83, 45, 42, 0.92); 
 	}
 
 	h1 {
 		visibility: visible;
 		height: 35px;
+		line-height: 0;
 		float: left;
 		margin: 0;
+		
 	}
 
 	#logo {
@@ -366,7 +370,7 @@ footer {
 		line-height: 35px;
 		vertical-align: center;
 		text-align: center;
-		color: #4d241f;
+		color: rgb(240, 213, 151);
 	}
 
 	nav {
@@ -398,7 +402,7 @@ footer {
 		margin-left: 20px;
 		padding: 0 10px;
 		letter-spacing: 1.5;
-		color:rgb(83,45,42);
+		color: rgb(240, 213, 151);
 	}
 
 	.menu a:hover {
