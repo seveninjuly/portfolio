@@ -48,10 +48,17 @@ function viewProjects() {
     })
 }
 
+function toggleMenu() {
+    $('.menu a').on('click', function () {
+        $('.hide-menu').click();
+    })
+}
+
 function showPortfolio() {
     backToTop();
     smoothScroll();
     viewProjects();
+    toggleMenu();
 }
 
 showPortfolio();
